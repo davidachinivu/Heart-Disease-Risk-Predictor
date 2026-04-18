@@ -71,7 +71,7 @@ heart_app/
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/yourusername/heart-disease-predictor
+git clone https://github.com/davidachinivu/Heart-Disease-Risk-Predictor
 cd heart-disease-predictor
 
 # 2. Install dependencies
