@@ -72,7 +72,7 @@ heart_app/
 ```bash
 # 1. Clone the repository
 git clone https://github.com/davidachinivu/Heart-Disease-Risk-Predictor
-cd heart-disease-predictor
+cd heart_app
 
 # 2. Install dependencies
 pip install -r requirements.txt
