@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Heart Disease Risk Predictor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <header class="hero">
+        <div class="nav-links">
+            <a href="{{ url_for('index') }}" class="nav-link">Back to Assessment</a>
+        </div>
+        <div class="hero-content">
+            <h2>About This Project</h2>
+        </div>
+    </header>
+
+    <main class="about-container">
+        <p class="about-text">
+            This application uses a trained machine learning model to estimate the probability of cardiovascular disease
+            based on clinical metrics. By analyzing historical patient data, the algorithm identifies complex patterns
+            across multiple risk factors to provide a rapid, data-driven health assessment.
+        </p>
+
+        <div class="stats-row">
+            <div class="stat-card">
+                <span class="stat-number">297</span>
+                <span class="stat-label">Patients</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number">13</span>
+                <span class="stat-label">Features</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number">80.5%</span>
+                <span class="stat-label">Accuracy</span>
+            </div>
+        </div>
+
+        <div class="credits-section">
+            <div class="credit-item">
+                Data: UCI Heart Disease Dataset, Cleveland Clinic 1988
+                <a href="https://archive.ics.uci.edu/dataset/45/heart+disease" class="credit-link" target="_blank"
+                    rel="noopener">View Source</a>
+            </div>
+            <div class="credit-item">
+                Built with Python, scikit-learn, Flask
+            </div>
+        </div>
+
+        <p class="disclaimer">For educational and informational purposes only. This tool does not provide medical
+            advice, diagnosis, or treatment.</p>
+    </main>
+</body>
+
+</html>

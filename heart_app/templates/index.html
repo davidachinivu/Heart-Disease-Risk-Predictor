@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Disease Risk Predictor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <header class="hero">
+        <div class="nav-links">
+            <a href="{{ url_for('about') }}" class="nav-link">About</a>
+        </div>
+        <div class="hero-content">
+            <div class="pulse-icon"></div>
+            <h1>Heart Disease Risk Predictor</h1>
+            <p>A smart, secure tool to evaluate your heart health based on clinical data.</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <form id="prediction-form">
+            <div class="cards-wrapper">
+                <!-- Card 1: Demographics -->
+                <div class="card">
+                    <h2>Patient Demographics</h2>
+                    <div class="form-group">
+                        <label for="age">Age (Years) <span class="tooltip"
+                                data-tooltip="Your current age.">?</span></label>
+                        <input type="number" id="age" name="age" min="20" max="80" value="55" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="sex">Biological Sex <span class="tooltip"
+                                data-tooltip="Sex assigned at birth.">?</span></label>
+                        <select id="sex" name="sex">
+                            <option value="0">Female</option>
+                            <option value="1" selected>Male</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="trestbps">Resting Blood Pressure <span class="tooltip"
+                                data-tooltip="The top number (systolic) of your blood pressure when resting (mmHg).">?</span></label>
+                        <input type="number" id="trestbps" name="trestbps" min="80" max="200" value="130" required>
+                    </div>
+                </div>
+
+                <!-- Card 2: Clinical & Lab Results -->
+                <div class="card">
+                    <h2>Clinical & Lab Results</h2>
+                    <div class="form-group">
+                        <label for="cp">Chest Pain Type <span class="tooltip"
+                                data-tooltip="The classification of chest pain you experience.">?</span></label>
+                        <select id="cp" name="cp">
+                            <option value="0">Typical Angina</option>
+                            <option value="1">Atypical Angina</option>
+                            <option value="2">Non-anginal Pain</option>
+                            <option value="3" selected>Asymptomatic</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="chol">Serum Cholesterol <span class="tooltip"
+                                data-tooltip="Total cholesterol level in your blood (mg/dl).">?</span></label>
+                        <input type="number" id="chol" name="chol" min="100" max="400" value="240" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="fbs">Fasting Blood Sugar > 120 <span class="tooltip"
+                                data-tooltip="Whether your blood sugar is elevated after fasting.">?</span></label>
+                        <select id="fbs" name="fbs">
+                            <option value="0" selected>No</option>
+                            <option value="1">Yes</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="restecg">Resting ECG <span class="tooltip"
+                                data-tooltip="Results from an electrocardiogram at rest.">?</span></label>
+                        <select id="restecg" name="restecg">
+                            <option value="0" selected>Normal</option>
+                            <option value="1">ST-T Abnormality</option>
+                            <option value="2">Left Ventricular Hypertrophy</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Card 3: Stress Test & Imaging -->
+                <div class="card">
+                    <h2>Stress Test & Imaging</h2>
+                    <div class="form-group">
+                        <label for="thalach">Max Heart Rate <span class="tooltip"
+                                data-tooltip="The highest heart rate achieved during a stress test.">?</span></label>
+                        <input type="number" id="thalach" name="thalach" min="60" max="220" value="140" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="exang">Exercise Induced Angina <span class="tooltip"
+                                data-tooltip="Do you experience chest pain when exercising?">?</span></label>
+                        <select id="exang" name="exang">
+                            <option value="0" selected>No</option>
+                            <option value="1">Yes</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="oldpeak">ST Depression (oldpeak) <span class="tooltip"
+                                data-tooltip="A measure of ECG changes during stress compared to rest.">?</span></label>
+                        <input type="number" id="oldpeak" name="oldpeak" min="0.0" max="6.0" step="0.1" value="1.2"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <label for="slope">ST Segment Slope <span class="tooltip"
+                                data-tooltip="The shape of the ECG line during peak exercise.">?</span></label>
+                        <select id="slope" name="slope">
+                            <option value="0">Upsloping</option>
+                            <option value="1" selected>Flat</option>
+                            <option value="2">Downsloping</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="ca">Major Vessels Colored <span class="tooltip"
+                                data-tooltip="Number of major blood vessels visible during fluoroscopy (0-3).">?</span></label>
+                        <select id="ca" name="ca">
+                            <option value="0" selected>0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="thal">Thalassemia <span class="tooltip"
+                                data-tooltip="Results from a blood disorder test measuring blood flow to the heart.">?</span></label>
+                        <select id="thal" name="thal">
+                            <option value="0">Unknown</option>
+                            <option value="1" selected>Normal</option>
+                            <option value="2">Fixed Defect</option>
+                            <option value="3">Reversable Defect</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="button-wrapper">
+                <button type="submit" id="submit-btn" class="submit-btn">
+                    <span>Assess Risk</span>
+                    <div class="spinner hidden" id="spinner"></div>
+                </button>
+            </div>
+        </form>
+
+        <div id="result-container" class="hidden">
+            <!-- Content injected via JS -->
+        </div>
+
+        <p class="disclaimer">For educational and informational purposes only. This tool does not provide medical
+            advice, diagnosis, or treatment.</p>
+    </main>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>
