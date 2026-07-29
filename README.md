@@ -6,7 +6,7 @@ A machine learning web application that predicts cardiovascular disease risk fro
 
 ## Notebook
 The full analysis and model training process is documented in
-[Heart_Disease_Risk_Predictor (1).ipynb](./Heart_Disease_Risk_Predictor (1).ipynb)
+[Heart_Disease_Risk_Predictor.ipynb](./Heart_Disease_Risk_Predictor.ipynb)
 
 ---
 
