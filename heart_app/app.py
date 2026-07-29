@@ -5,11 +5,10 @@ import os
 
 app = Flask(__name__)
 
-# Load models at startup
+
 MODEL_PATH = 'heart_disease_model.pkl'
 SCALER_PATH = 'scaler.pkl'
 
-# Fallback to parent directory if not found in current (helpful for local testing)
 if not os.path.exists(MODEL_PATH) and os.path.exists('../' + MODEL_PATH):
     MODEL_PATH = '../' + MODEL_PATH
 if not os.path.exists(SCALER_PATH) and os.path.exists('../' + SCALER_PATH):
@@ -77,18 +76,4 @@ def predict():
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
 
-# -------------------------------------------------------- #
-# HOW TO RUN LOCALLY:
-# 1. Open terminal and navigate to the heart_app directory
-# 2. Run: pip install -r requirements.txt
-# 3. Run: python app.py
-# 4. Open http://127.0.0.1:5000 in your browser
-#
-# HOW TO DEPLOY FREE ON RENDER.COM:
-# 1. Push this folder to a GitHub repository (including pkl files).
-# 2. Go to Render.com and create a new "Web Service".
-# 3. Connect your GitHub repository.
-# 4. Set Build Command to: pip install -r requirements.txt
-# 5. Set Start Command to: gunicorn app:app
-# 6. Click "Create Web Service" and wait for deployment!
-# -------------------------------------------------------- #
+
