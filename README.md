@@ -4,7 +4,7 @@ A machine learning web application that predicts cardiovascular disease risk fro
 
 **[Live Demo](https://heartdiseaseriskpredictor.onrender.com/)**
 
-## Notebook
+# Notebook
 The full analysis and model training process is documented in
 [Heart_Disease_Risk_Predictor.ipynb](./Heart_Disease_Risk_Predictor.ipynb)
 
