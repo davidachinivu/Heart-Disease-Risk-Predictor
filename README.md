@@ -110,6 +110,10 @@ UCI Heart Disease Dataset — Cleveland Subset
 - **Records:** 297 patients · 13 features · binary classification target
 - **Citation:** Janosi, A., Steinbrunn, W., Pfisterer, M., & Detrano, R. (1989). Heart Disease [Dataset]. UCI Machine Learning Repository. https://doi.org/10.24432/C52P4X
 
+
+## Model
+The trained model is hosted on Hugging Face — [davidachinivu/heart-disease-risk-predictor](https://huggingface.co/davidachinivu/heart-disease-risk-predictor)
+
 ---
 
 ## Limitations
