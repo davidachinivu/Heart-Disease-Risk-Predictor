@@ -2,7 +2,7 @@
 
 A machine learning web application that predicts cardiovascular disease risk from 13 clinical patient parameters. Built as a full-stack project combining a trained ML model with a Flask backend and a responsive frontend.
 
-**[Live Demo](https://heartdiseaseriskpredictor.onrender.com/)**
+**[Live Demo](https://heartdiseaseriskpredictor.onrender.com/)** · **[Hugging Face Model](https://huggingface.co/davidachinivu/heart-disease-risk-predictor)**
 
 # Notebook
 The full analysis and model training process is documented in
